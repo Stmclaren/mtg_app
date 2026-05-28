@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  authenticated :user do
+    root to: "dashboard#show", as: :authenticated_root
+  end
+
+  unauthenticated do
+    root to: "pages#landing", as: :unauthenticated_root
+  end
+  
+  get "pages/landing"
+  get "dashboard/show"
+  get "profiles/show"
+  get "profiles/edit"
+  get "profiles/update"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,4 +24,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  devise_for :users
+  root "dashboard#show"
+
+  resource :profile, only: [ :show, :edit, :update ]
 end
