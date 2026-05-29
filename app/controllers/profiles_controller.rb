@@ -8,11 +8,11 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = current_user.profile
+    @profile = current_user.profile || current_user.create_profile
     if @profile.update(profile_params)
-      redirect_to @profile
+      redirect_to profile_path, notice: "Profile updated"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

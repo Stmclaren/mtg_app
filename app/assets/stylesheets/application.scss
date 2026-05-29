@@ -1,6 +1,7 @@
+// Your CSS Shared elements
+@import "config/fonts";
+@import "shared/navbar";
+
 // Your CSS partials
 @import "pages/landing";
 @import "pages/profile";
-
-// Your CSS Shared elements
-@import "shared/navbar";
