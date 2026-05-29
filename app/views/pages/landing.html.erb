@@ -1,18 +1,21 @@
 <h1>MTG Deck Builder</h1>
 <div class="landing-page">
-  <%# don't forget CSS %>
-    <div class="landing-container d-flex">
+    <div class="landing-container">
      <div class="landing-image"></div>
      <div class="landing-title mb-4">
         <h2>Assemble & Organise your Magic the Gathering collection here</h2>
       <div class ="landing-subtitle mb-4">
         <p>Do the building and testing here first!</p>
+        <div class="d-flex flex-column flex-sm-row gap-1">
+            <%= link_to "Log In", new_user_session_path, class: "landing-button" %>
         </div>
-        </div>
+        <br>
+        <div class="d-flex flex-column flex-sm-row gap-1">
+            <%= link_to "Sign Up", new_user_registration_path, class: "landing-button" %>
 
-          <div class="d-flex flex-column flex-sm-row gap-3">
-            <%= link_to "Get Started", new_user_registration_path, class: "onboarding-button landing-button" %>
-          </div>
+        </div>
+        </div>
+        </div>
         </div>
     </div>
 </div>
