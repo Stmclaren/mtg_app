@@ -17,7 +17,6 @@
       <!-- DROPDOWN MENU -->
       <ul class="dropdown-menu dropdown-menu-end">
         <% if user_signed_in? %>
-
         <li>
           <%= link_to "My Profile",
                 profiles_show_path,
@@ -43,10 +42,10 @@
         <% else %>
         <li>
           <%= link_to "Sign Up",
-            new_user_registration_path,
-            class: "dropdown-item" %>
-            </li>
-        <% end %>
+          new_user_registration_path,
+          class: "dropdown-item" %>
+          </li>
+          <% end %>
       </ul>
     </li>
     </ul>
